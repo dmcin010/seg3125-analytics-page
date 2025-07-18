@@ -13,12 +13,13 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left-side text */}
-        <div className="nav-title">My Dashboard</div>
+        {/* Logo / Home navigation */}
+        <div className="nav-title" onClick={() => navigate('/')}>
+          My Dashboard
+        </div>
 
-        {/* Right-side buttons */}
+        {/* Navigation buttons on the right */}
         <div className="nav-buttons">
-          <button className="nav-button" onClick={() => navigate('/')}>Home</button>
           <button className="nav-button" onClick={() => navigate('/charts')}>Charts</button>
           <button className="nav-button" onClick={toggleLanguage}>
             {language === 'en' ? 'Français' : 'English'}

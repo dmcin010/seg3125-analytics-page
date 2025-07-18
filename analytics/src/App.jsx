@@ -8,6 +8,7 @@ import AnalyticsBackground from './assets/AnalyticsBackground.png';
 import Home from './pages/Home.jsx';
 import Charts from './pages/Charts.jsx';
 import McDonaldsRevenueChart from './pages/McdonaldsRevenueChart.jsx';
+import GlobalTemperatureChart from './pages/GlobalTemperatureChart.jsx'; // ✅ New chart page
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/charts" element={<Charts />} />
           <Route path="/charts/mcdonalds" element={<McDonaldsRevenueChart />} />
+          <Route path="/charts/global-temperature" element={<GlobalTemperatureChart />} /> {/* ✅ Added route */}
         </Routes>
       </main>
 

@@ -10,6 +10,8 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import MetricCard from '../components/MetricCard.jsx';
+import { Link } from 'react-router-dom'; // ✅ For routing
+import './McdonaldsRevenueChart.css';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 
@@ -76,10 +78,14 @@ const options = {
   },
 };
 
-
 export default function McDonaldsRevenueChart() {
   return (
-    <div>
+    <div className="chart-page">
+      {/* 🔙 Floating top-right button */}
+      <div className="chart-top-button">
+        <Link to="/charts" className="view-back-button">← Back</Link>
+      </div>
+
       <h1 className="dashboard-title">McDonald's Revenue Overview</h1>
 
       <div className="metric-grid">
@@ -89,9 +95,7 @@ export default function McDonaldsRevenueChart() {
       </div>
 
       <div className="chart-wrapper">
-        <div style={{ width: '90%' }}>
-          <Bar data={data} options={options} />
-        </div>
+        <Bar data={data} options={options} />
       </div>
     </div>
   );

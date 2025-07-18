@@ -1,4 +1,4 @@
-/* 🌍 Page-wide layout */
+/* 🌍 Make the wrapper full height */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,28 +7,13 @@
   overflow: hidden;
 }
 
-/* 🖼️ Background image */
-.background-image {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  opacity: 0.7;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-/* 🔲 Optional overlay tint */
-.background-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-color: rgba(245, 247, 250, 0.2);
-}
-
-/* 🧱 Main dashboard layout */
+/* 🧱 Force dashboard-main to fill available vertical space */
 .dashboard-main {
+  position: relative;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes content + button apart */
   width: 95%;
   max-width: 1800px;
   margin: 2rem auto;
@@ -36,42 +21,29 @@
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-}
-
-/* 🏷️ Section heading */
-.dashboard-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #0a3d91;
-  margin-bottom: 1rem;
-}
-
-.metric-grid {
-  display: flex;
-  justify-content: center;     /* centers the whole group */
-  gap: 1.25rem;                /* closer spacing between cards */
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  min-height: calc(100vh - 120px); /* adjust if navbar/footer change height */
 }
 
 
-/* ✅ Optional: lock each metric card width */
-.metric-card {
-  width: 250px;        /* You can change this to 300px for more breathing room */
-  flex-shrink: 0;
+/* 👇 Floating button inside .dashboard-main */
+.button-outside {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
 
-.chart-wrapper {
-  display: flex;
-  justify-content: center;     /* horizontally center the chart */
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+.view-charts-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* 📐 Footer stays at bottom */
-footer {
-  margin-top: auto;
+.view-charts-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
