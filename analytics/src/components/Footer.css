@@ -1,0 +1,35 @@
+.footer {
+  background-color: #333; /* dark grey */
+  color: white;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-icon {
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer-icon:hover {
+  color: #929292; /* navbar blue */
+}
