@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LanguageContext from '../LanguageContext.js';
+import { translations } from '../utils/translations.js';
 import './Navbar.css';
 
 export default function Navbar() {
-  const [language, setLanguage] = useState('en');
   const navigate = useNavigate();
+  const { language, setLanguage } = useContext(LanguageContext);
+  const t = translations[language];
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'en' ? 'fr' : 'en'));
@@ -13,14 +16,14 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo / Home navigation */}
         <div className="nav-title" onClick={() => navigate('/')}>
-          My Dashboard
+          {t.dashboardTitle}
         </div>
 
-        {/* Navigation buttons on the right */}
         <div className="nav-buttons">
-          <button className="nav-button" onClick={() => navigate('/charts')}>Charts</button>
+          <button className="nav-button" onClick={() => navigate('/charts')}>
+            {t.charts}
+          </button>
           <button className="nav-button" onClick={toggleLanguage}>
             {language === 'en' ? 'Français' : 'English'}
           </button>

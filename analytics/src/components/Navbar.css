@@ -19,9 +19,8 @@
 .nav-buttons {
   display: flex;
   gap: 1rem;
-  margin-right: 4rem; /* 👈 Push buttons away from right edge */
+  margin-right: 4rem;
 }
-
 
 .nav-button {
   font-size: 1rem;

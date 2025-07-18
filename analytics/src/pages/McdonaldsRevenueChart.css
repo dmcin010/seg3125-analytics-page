@@ -27,7 +27,6 @@
   text-align: center;
 }
 
-/* Ensure metric cards are centered horizontally */
 .metric-grid {
   display: flex;
   justify-content: center;

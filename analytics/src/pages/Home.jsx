@@ -1,5 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import LanguageContext from '../LanguageContext.js';
+import { translations } from '../utils/translations.js';
+
 import dashboardImg from '../assets/graphs.png';
 import chartsImg from '../assets/graphs2.png';
 import historyImg from '../assets/graphs.png';
@@ -8,6 +11,9 @@ import focusImg from '../assets/graphs.png';
 import './Home.css';
 
 export default function Home() {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -28,46 +34,43 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      <h1 className="dashboard-title">Welcome to My Dashboard</h1>
+      <h1 className="dashboard-title">{t.homeHeadline}</h1>
 
       <div className="hero-section">
         <img src={dashboardImg} alt="Dashboard preview" className="hero-image" />
         <div className="hero-text">
-          <h2>Providing you the most accurate information with confidence since 2009</h2>
-          <p>
-            This dashboard brings together industry insights, historical data, and interactive charts
-            so you can visualize trends and metrics effortlessly.
-          </p>
+          <h2>{t.homeIntro}</h2>
+          <p>{t.homeDetails}</p>
         </div>
       </div>
 
-      <h3 className="features-title">What My Dashboard Offers</h3>
+      <h3 className="features-title">{t.homeOffers}</h3>
 
       <div className="features-grid">
         <FeatureCard
           img={chartsImg}
-          title="Interactive Charts"
-          description="Visualize trends with tooltips, axis labels, and responsive layouts."
+          title={t.featureCharts}
+          description={t.featureChartsDesc}
         />
         <FeatureCard
           img={historyImg}
-          title="Historical Accuracy"
-          description="Dive into nearly 20 years of trusted, brand-specific data."
+          title={t.featureAccuracy}
+          description={t.featureAccuracyDesc}
         />
         <FeatureCard
           img={speedImg}
-          title="Fast Performance"
-          description="Built with Vite and React to ensure ultra-responsive speed."
+          title={t.featureSpeed}
+          description={t.featureSpeedDesc}
         />
         <FeatureCard
           img={focusImg}
-          title="Purpose-Driven Simplicity"
-          description="No clutter—just straightforward access to the metrics you need."
+          title={t.featureSimplicity}
+          description={t.featureSimplicityDesc}
         />
       </div>
 
       <div className="button-outside">
-        <Link to="/charts" className="view-charts-button">View Charts →</Link>
+        <Link to="/charts" className="view-charts-button">{t.viewCharts}</Link>
       </div>
     </div>
   );

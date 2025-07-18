@@ -27,7 +27,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* 🧩 Larger preview grid layout */
 .chart-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));

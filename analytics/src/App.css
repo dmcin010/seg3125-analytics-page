@@ -1,4 +1,3 @@
-/* 🌍 Make the wrapper full height */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,13 +6,12 @@
   overflow: hidden;
 }
 
-/* 🧱 Force dashboard-main to fill available vertical space */
 .dashboard-main {
   position: relative;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes content + button apart */
+  justify-content: space-between;
   width: 95%;
   max-width: 1800px;
   margin: 2rem auto;
@@ -21,11 +19,9 @@
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  min-height: calc(100vh - 120px); /* adjust if navbar/footer change height */
+  min-height: calc(100vh - 120px);
 }
 
-
-/* 👇 Floating button inside .dashboard-main */
 .button-outside {
   position: absolute;
   bottom: 2rem;
