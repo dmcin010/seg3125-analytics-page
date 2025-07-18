@@ -1,15 +1,4 @@
-.main-wrapper {
-  flex-grow: 1;
-  width: 90%;
-  max-width: 1600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-
+/* 🌍 Page-wide layout */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -18,61 +7,71 @@
   overflow: hidden;
 }
 
-
-/* Background Image Layer */
+/* 🖼️ Background image */
 .background-image {
   position: fixed;
   inset: 0;
   z-index: -2;
-}
-/* Main Content Styling */
-.main-wrapper {
-  flex-grow: 1;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  opacity: 0.7;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* Optional Overlay for Tinting or Soft Contrast */
+/* 🔲 Optional overlay tint */
 .background-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(245, 247, 250, 0.2); /* soft white-blue tint */
   z-index: -1;
+  background-color: rgba(245, 247, 250, 0.2);
 }
 
-/* Background image */
-body {
-  margin: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.app-wrapper::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-color: rgba(245, 247, 250, 0.2); /* optional extra softness */
-  z-index: -1;
-}
-
-
-
-/* Main content container */
-.main-wrapper {
+/* 🧱 Main dashboard layout */
+.dashboard-main {
   flex-grow: 1;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1800px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 2rem;
+/* 🏷️ Section heading */
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #0a3d91;
+  margin-bottom: 1rem;
+}
+
+.metric-grid {
+  display: flex;
+  justify-content: center;     /* centers the whole group */
+  gap: 1.25rem;                /* closer spacing between cards */
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+
+/* ✅ Optional: lock each metric card width */
+.metric-card {
+  width: 250px;        /* You can change this to 300px for more breathing room */
+  flex-shrink: 0;
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;     /* horizontally center the chart */
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 📐 Footer stays at bottom */
+footer {
+  margin-top: auto;
 }

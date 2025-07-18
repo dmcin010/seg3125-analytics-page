@@ -19,14 +19,12 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          opacity: 0.5,
+          opacity: 0.7,
         }}
       />
-      <div className="background-overlay" />
-
       <Navbar />
 
-      <main className="main-wrapper">
+      <main className="dashboard-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/charts" element={<Charts />} />
