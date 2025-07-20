@@ -6,7 +6,7 @@ import { translations } from '../utils/translations.js';
 import dashboardImg from '../assets/graphs.png';
 import chartsImg from '../assets/graphs2.png';
 import historyImg from '../assets/graphs.png';
-import speedImg from '../assets/graphs.png';
+import speedImg from '../assets/graphs2.png';
 import focusImg from '../assets/graphs.png';
 import './Home.css';
 
